@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="join-form" action="/auth/join" method="post">
+        <div class="input-group">
+            <label for="join-email">staffId</label>
+            <input id="join-email" type="text" name="staffId"></div>
+        <div class="input-group">
+            <label for="join-nick">staffName</label>
+            <input id="join-nick" type="text" name="staffName"></div>
+        <div class="input-group">
+            <label for="join-password">staffPassword</label>
+            <input id="join-password" type="password" name="staffPassword">
+        </div>
+        
+        <div class="input-group">
+            <label for="staffRank">staffRank</label>
+            <select name="staffRank" id="staffRank">
+                <option value="직원">직원</option>
+                <option value="일자리체험자">일자리체험자</option>
+                <option value="실습생">실습생</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="join-phoneNumber">staffPhoneNumber</label>
+            <input id="join-phoneNumber" type="text" name="staffPhoneNumber">
+        </div>
+
+            <button id="join-btn" type="submit" class="btn">회원가입</button>
+    </form>    
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CHK-PROJECT</title>
+    <link rel="stylesheet" href="/people.css" />
+    <link rel="stylesheet" href="/people-dropdown.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-column">
+        <p>청인 프로젝트</p>
+      </div>
+      <div class="header-column">
+        <a href="/login"><p>login</p></a>
+        <a href="/join"><p>register</p></a>
+      </div>
+    </header>
+    <h1>People</h1>
+
+      <ul class="dropdown">
+        <li><p>전체</p>
+            <ul>
+                <li><p>지역</p></a>
+                  <ul>
+                    <li id="vehicleTypeSangdong"><p>상동</p></li>
+                </ul>
+              </li>
+                <li><p>담당</p></a>
+                  <ul>
+                    <li id="userPICJun"><p>성준</p></li>
+                    <li id="userPICCaptain"><p>소장님</p></li>
+                </ul>
+              </li>
+            </ul>
+        </li>
+    </ul>
+    
+
+    <form action="/" method="get" id="userSearchContainer">
+      검색 <input type="search" name="userSearchInput" id="userSearchInput" />
+    </form>
+
+    <form id="user-form">
+      <fieldset>
+        <legend>사용자 등록</legend>
+        <div><input id="username" type="text" placeholder="이름" /></div>
+        <div><input id="userPicture" type="text" placeholder="사진 나중에 수정" /></div>
+        <div><input id="userInfo" type="text" placeholder="유저 정보" /></div>
+        <label for="userPIC">담당</label>
+          <select name="userPIC" id="userPIC">
+            {% for staff in staffs %}
+              <option value="{{staff.staffId}}">{{staff.staffName}}</option>
+            {% endfor %}
+            
+          </select>
+        <label for="userVehicleType">하교수단</label>
+          <select name="userVehicleType" id="userVehicleType">
+            <option value="상동">상동</option>
+            <option value="황금">황금</option>
+            <option value="pumpernickel">Pumpernickel</option>
+            <option value="reeses">Reeses</option>
+          </select>
+
+        <div>
+          <input id="phoneNumber" type="text" placeholder="본인 번호" />
+        </div>
+        <div>
+          <input id="phoneNumberFamily" type="text" placeholder="보호자 번호" />
+        </div>
+        <div>
+          <input id="phoneNumberHouse" type="text" placeholder="집 번호" />
+        </div>
+        <button type="submit">등록</button>
+      </fieldset>
+    </form>
+
+    <div id="user-list">
+      {% for user in users %}
+      <div class="user">
+        <h4>{{user.id}}</h4>
+        <div class="face"></div>
+        <h2 class="name">{{user.name}}</h2>
+        <p>{{user.phone_number}}</p>
+        <p>{{user.phone_number_family}}</p>
+        <p>{{user.phone_number_house}}</p>
+        <div>
+          <button>삭제</button>
+          <button>수정</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/people.js"></script>
+  </body>
+</html>
