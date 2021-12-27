@@ -1,0 +1,20 @@
+.sidebarContainer {
+  background-color: rgb(26, 26, 26);
+  color: rgb(238, 238, 238);
+  padding: 20px;
+}
+
+.logo h1 {
+}
+
+.sidebarElments p {
+  color: gray;
+}
+
+.sideberElement {
+  display: flex;
+  align-items: center;
+}
+.sideberElement .sidebarName {
+  margin-left: 20px;
+}

@@ -1,0 +1,13 @@
+.peopleContainer {
+  width: 100%;
+  display: flex;
+  background-color: rgb(37, 37, 37);
+  padding: 20px;
+}
+
+.userList .userList {
+  color: white;
+}
+.userList h1 {
+  color: white;
+}
